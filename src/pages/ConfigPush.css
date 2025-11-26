@@ -1,0 +1,135 @@
+/* PAGE */
+.config-page {
+    padding: 40px;
+    font-family: "Inter", sans-serif;
+    max-width: 900px;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #1f2937;
+    font-weight: 700;
+}
+
+/* CARD */
+.card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* FORM */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form label {
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* INPUTS */
+.input,
+.textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    background: #f9fafb;
+    font-size: 14px;
+    color: #1e293b;
+    transition: 0.25s;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+    background: #fff;
+}
+
+/* CONNECT BUTTON */
+.connect-btn {
+    margin-top: 6px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.connect-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(5, 150, 105, 0.35);
+}
+
+.connect-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* DISABLED LABEL */
+.disabled-label {
+    opacity: 0.4;
+}
+
+/* DISABLED TEXTAREA LOOK */
+.textarea:disabled {
+    background: #f1f5f9;
+    cursor: not-allowed;
+}
+
+/* TEXTAREA */
+.textarea {
+    height: 180px;
+    resize: vertical;
+    font-family: "Fira Code", monospace;
+    white-space: pre;
+}
+
+/* PUSH BUTTON */
+.push-btn {
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.push-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(29, 78, 216, 0.35);
+}
+
+/* RESULT BOX */
+.result-box {
+    margin-top: 30px;
+    background: #1e293b;
+    color: #cbd5e1;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    border: 1px solid #334155;
+}
