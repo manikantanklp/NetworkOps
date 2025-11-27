@@ -9,6 +9,7 @@ export default function Sidebar() {
         { name: "Inventory", path: "/inventory" },
         { name: "Discovery", path: "/discover" },
         { name: "Push Config", path: "/config" },
+        { name: "Tickets", path: "/tickets" },  
         { name: "Analytics", path: "/analytics" },
     ];
 
@@ -16,18 +17,15 @@ export default function Sidebar() {
         <aside className="sidebar">
             <div className="sidebar-brand">NetworkOps</div>
             <nav className="sidebar-nav">
-                {links.map((link) => {
-                    const isActive = location.pathname === link.path;
-                    return (
-                        <Link
-                            key={link.name}
-                            to={link.path}
-                            className={isActive ? "active" : ""}
-                        >
-                            {link.name}
-                        </Link>
-                    );
-                })}
+                {links.map((link) => (
+                    <Link
+                        key={link.name}
+                        to={link.path}
+                        className={location.pathname === link.path ? "active" : ""}
+                    >
+                        {link.name}
+                    </Link>
+                ))}
             </nav>
             <div className="sidebar-footer">© 2025 NetworkOps</div>
         </aside>

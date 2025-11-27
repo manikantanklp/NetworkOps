@@ -5,6 +5,7 @@ import Inventory from "./pages/Inventory";
 import Discovery from "./pages/Discovery";
 import ConfigPush from "./pages/ConfigPush";
 import Analytics from "./pages/Analytics";
+import Tickets from "./pages/Tickets";  
 
 import './App.css';
 
@@ -30,7 +31,8 @@ function App() {
               <Route path="/inventory" element={<Inventory />} />
               <Route path="/discover" element={<Discovery />} />
               <Route path="/config" element={<ConfigPush />} />
-              <Route path="/Analytics" element={<Analytics />} />
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/tickets" element={<Tickets />} /> {/* 👈 Add Tickets route */}
             </Routes>
           </main>
         </div>
