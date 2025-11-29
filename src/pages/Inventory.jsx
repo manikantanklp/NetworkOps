@@ -12,8 +12,8 @@ export default function Inventory() {
     const fetchInventory = async () => {
         try {
             setLoading(true);
-            const res = await getInventory();
-            setDevices(res.data);
+            const data = await getInventory();
+            setDevices(data);
             setLoading(false);
         } catch (err) {
             setError("Failed to fetch inventory");

@@ -1,46 +1,60 @@
-/* PAGE */
-.config-page {
+/* ================================================
+   PAGE WRAPPER
+================================================ */
+.page {
     padding: 40px;
     font-family: "Inter", sans-serif;
     max-width: 900px;
     margin: auto;
 }
 
-.title {
+h2 {
     text-align: center;
     font-size: 32px;
     margin-bottom: 25px;
-    color: #1f2937;
     font-weight: 700;
+    color: #1f2937;
 }
 
-/* CARD */
+/* ================================================
+   CARD
+================================================ */
 .card {
     background: #ffffff;
-    padding: 30px;
-    border-radius: 14px;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    padding: 32px;
+    border-radius: 16px;
     border: 1px solid #e5e7eb;
-    max-width: 600px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    max-width: 650px;
     margin: auto;
+    transition: 0.3s ease;
 }
 
-/* FORM */
+.card:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* ================================================
+   FORM SECTIONS
+================================================ */
 .form {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
+    margin-bottom: 25px;
 }
 
-.form label {
-    color: #374151;
+label {
     font-size: 14px;
     font-weight: 600;
+    color: #374151;
+    margin-bottom: 4px;
 }
 
-/* INPUTS */
-.input,
-.textarea {
+/* Inputs */
+select,
+input,
+textarea {
     width: 100%;
     padding: 12px 14px;
     border-radius: 10px;
@@ -48,88 +62,122 @@
     background: #f9fafb;
     font-size: 14px;
     color: #1e293b;
-    transition: 0.25s;
+    transition: 0.25s ease;
 }
 
-.input:focus,
-.textarea:focus {
+select:focus,
+input:focus,
+textarea:focus {
     outline: none;
     border-color: #2563eb;
+    background: #ffffff;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
-    background: #fff;
 }
 
-/* CONNECT BUTTON */
-.connect-btn {
-    margin-top: 6px;
+/* Textarea */
+textarea {
+    height: 220px;
+    resize: vertical;
+    font-family: "Fira Code", monospace;
+    line-height: 1.45;
+    white-space: pre-wrap;
+}
+
+/* Disabled */
+input:disabled,
+textarea:disabled {
+    background: #f1f5f9;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ================================================
+   BUTTONS
+================================================ */
+button {
+    border: none;
     padding: 12px;
     font-size: 15px;
     font-weight: 600;
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: white;
-    border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: 0.25s;
+    transition: 0.25s ease;
+    color: white;
 }
 
-.connect-btn:hover {
+.ssh-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.ssh-btn:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(5, 150, 105, 0.35);
 }
 
-.connect-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-/* DISABLED LABEL */
-.disabled-label {
-    opacity: 0.4;
-}
-
-/* DISABLED TEXTAREA LOOK */
-.textarea:disabled {
-    background: #f1f5f9;
-    cursor: not-allowed;
-}
-
-/* TEXTAREA */
-.textarea {
-    height: 180px;
-    resize: vertical;
-    font-family: "Fira Code", monospace;
-    white-space: pre;
-}
-
-/* PUSH BUTTON */
 .push-btn {
-    margin-top: 10px;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: 600;
     background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.25s;
 }
 
-.push-btn:hover {
+.push-btn:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(29, 78, 216, 0.35);
 }
 
-/* RESULT BOX */
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Button alignment */
+.button-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* ================================================
+   SSH STATUS TEXT
+================================================ */
+.ssh-status {
+    font-size: 14px;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.ssh-status.success {
+    color: #059669;
+}
+
+.ssh-status.error {
+    color: #dc2626;
+}
+
+/* ================================================
+   RESULT BOX (API output)
+================================================ */
 .result-box {
     margin-top: 30px;
-    background: #1e293b;
-    color: #cbd5e1;
+    background: #0f172a;
+    color: #e2e8f0;
     padding: 20px;
     border-radius: 12px;
     font-size: 14px;
     white-space: pre-wrap;
     overflow-x: auto;
-    border: 1px solid #334155;
+    border: 1px solid #1e293b;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 22px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .button-row {
+        flex-direction: column;
+    }
 }

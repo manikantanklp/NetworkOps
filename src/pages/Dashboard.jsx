@@ -10,8 +10,8 @@ export default function Dashboard() {
     useEffect(() => {
         const fetchStatus = async () => {
             try {
-                const response = await getStatus();
-                setStatus(response.data);
+                const data = await getStatus();
+                setStatus(data);
                 setLoading(false);
             } catch (err) {
                 setError("Failed to load device status");

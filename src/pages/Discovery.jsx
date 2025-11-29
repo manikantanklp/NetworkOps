@@ -21,7 +21,7 @@ export default function Discovery() {
 
         try {
             const res = await runDiscovery(ip.trim());
-            setResult(res.data);
+            setResult(res);
         } catch (err) {
             setError(
                 err.response?.data?.error || "Failed to start discovery. Check IP/API."

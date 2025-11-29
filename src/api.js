@@ -15,23 +15,40 @@ async function handleRequest(request) {
     }
 }
 
-// Inventory / Devices
-export const getInventory = () => API.get("/inventory");
-export const addDevice = (device) => API.post("/device", device);
-export const deleteDevice = (ip) => API.delete(`/device/${ip}`);
-export const runDiscovery = (start_ip) => API.post("/discover", { start_ip });
-export const getStatus = () => API.get("/status");
-export const pushConfig = ({ ip, config }) => API.post("/push-config", { ip, config });
-export const runCommand = ({ ip, command }) => API.post("/run-command", { ip, command });
+/* ================================
+   INVENTORY / DISCOVERY
+================================ */
+export const getInventory = () => handleRequest(API.get("/inventory"));
+export const addDevice = (device) => handleRequest(API.post("/device", device));
+export const deleteDevice = (ip) => handleRequest(API.delete(`/device/${ip}`));
+export const runDiscovery = (start_ip) =>
+    handleRequest(API.post("/discover", { start_ip }));
 
-// Generic handleRequest usage
+export const getStatus = () => handleRequest(API.get("/status"));
+
+/* ================================
+   CONFIG PUSH
+================================ */
+export const pushConfig = ({ ip, username, password, config }) =>
+    handleRequest(API.post("/push-config", { ip, username, password, config }));
+
+export const runCommand = ({ ip, username, password, command }) =>
+    handleRequest(API.post("/run-command", { ip, username, password, command }));
+
+/* ================================
+   NOC DASHBOARD APIs
+================================ */
 export const getDevices = () => handleRequest(API.get("/devices"));
 export const getHealth = () => handleRequest(API.get("/health"));
-export const getAutomationSummary = () => handleRequest(API.get("/automation/summary"));
-export const getConfigDiff = (deviceId) => handleRequest(API.get(`/config/${deviceId}`));
+export const getAutomationSummary = () =>
+    handleRequest(API.get("/automation/summary"));
+export const getConfigDiff = (deviceId) =>
+    handleRequest(API.get(`/config/${deviceId}`));
 export const getCompliance = () => handleRequest(API.get("/compliance"));
 export const getAlerts = () => handleRequest(API.get("/alerts"));
-export const getTrends = (range = 7) => handleRequest(API.get(`/trends?range=${range}`));
-export const getRecommendations = () => handleRequest(API.get("/recommendations"));
+export const getTrends = (range = 7) =>
+    handleRequest(API.get(`/trends?range=${range}`));
+export const getRecommendations = () =>
+    handleRequest(API.get("/recommendations"));
 
 export default API;
